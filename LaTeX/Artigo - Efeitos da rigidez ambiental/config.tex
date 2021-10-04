@@ -1,0 +1,162 @@
+%\documentclass[12pt, openright,oneside, a4paper, english, brazil]{abntex2}
+\documentclass[12pt,
+               openright,
+               oneside,
+               a4paper,
+							 section=TITLE,     % COMO SÃO AS LETRAS MAIÚSCULAS EM SEÇÃO
+               subsection=Title,  % EM DIANTE ESCRITO NORMALMENTE
+               english,brazil]{article}
+
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% ----------------------------
+% Pacotes básicos 
+% ----------------------------
+% Referências
+\usepackage[brazilian,hyperpageref]{}	
+\usepackage{hyperref}
+\usepackage[alf]{abntex2cite}			
+
+% Fonte e codificação (acentuação)
+%\usepackage{lmodern}       
+%\renewcommand{\sfdefault}{ppl}
+%\usepackage[T1]{fontenc}	
+\usepackage{fontspec}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+% Tabelas e Figuras
+\usepackage{ctable}             
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}              
+\usepackage{longtable}          
+\usepackage{xcolor,colortbl}    
+\usepackage{booktabs}           
+\usepackage{graphicx}			
+\usepackage{caption}  
+\usepackage{subcaption}
+\usepackage{epstopdf}    
+\usepackage{rotating}
+
+% Equações e símbolos
+\usepackage{amsmath}            
+\usepackage{nomencl} 
+\usepackage{cleveref} 
+\usepackage{calrsfs}
+\usepackage{amssymb}
+\usepackage{psfrag}
+\usepackage[brazil]{babel}
+% Texto
+%\usepackage[showframe,heightrounded]{geometry}
+\usepackage{geometry}
+\usepackage{indentfirst}		
+\usepackage{color}				
+\usepackage{microtype} 			
+\usepackage{lastpage}			
+\usepackage{enumitem}                % Para os itens em letras
+\usepackage{lipsum}
+\usepackage{lastpage}
+\usepackage{tablefootnote}
+\usepackage{pdflscape}
+\usepackage{scalefnt}
+\usepackage[stable]{footmisc}
+\usepackage{ragged2e}
+% ----------------------------------------------------------
+% Configurações do texto
+% ----------------------------------------------------------
+
+% Recuo do parágrafo :
+\setlength{\parindent}{1.5cm}
+\setlength{\parskip}{0cm} 
+\geometry{a4paper}%,left=3cm,right=2cm,top=3cm,bottom=2cm} % SEMPRE BOM VER A DOCUMENTAÇÃO
+\hoffset = -1in
+\voffset = -1in
+\oddsidemargin = 1.5cm
+\topmargin = 2cm
+\headheight = 0pt
+\headsep = 6pt % multiplicar por 0.03515 para obter cm
+\textheight = 249mm
+\textwidth = 18cm
+\marginparsep = 0pt
+\marginparwidth = 0pt
+\footskip = 6mm
+%
+%
+%
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+%
+%
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{propriedade}[teorema]{Condição}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{corolario}[teorema]{Corolário}
+\newtheorem{proposicao}[teorema]{Proposição}
+\newtheorem{definicao}[teorema]{Definição}
+\newtheorem{exemplo}[teorema]{Exemplo}
+\newtheorem{af}[teorema]{AF}
+\newtheorem{exercicio}[teorema]{Exercício}
+\newtheorem{algoritmo}{Algoritmo}[section]
+\newtheorem{exc}{}[section]
+\newtheorem{impl}{}[section]
+\newtheorem{hip}{H\hspace{-.12cm}}
+\newtheorem{res}{R\hspace{-.12cm}}
+%
+%
+%
+\newcommand{\rel}{\Bbb R^{\ell}}
+\newcommand{\rell}{\mathbb R^{\ell}_{+}}
+\newcommand{\rr}{\mathbb R}
+\newcommand{\bb}[1]{\boldsymbol{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\hess}{\nabla^2(f(\bb{x}))}
+
+\newcommand{\kktmax}[3]{
+\begin{aligned}
+& \underset{#1}{\text{maximizar}}
+& & {#2} \\
+& \text{sujeito a} 
+& & {#3} \\
+\end{aligned}}
+
+\newcommand{\kktmin}[3]{
+\begin{aligned}
+& \underset{#1}{\text{minimizar}}
+& & {#2} \\
+& \text{sujeito a} 
+& & {#3} \\
+\end{aligned}}
+
+%  Novos macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Rn}{{\R}^n}
+\newcommand{\sumin}{\sum_{i=1}^n}
+\newcommand{\Rl}{{\R}^\ell}
+\newcommand{\Rm}{{\R}^m}
+\newcommand{\ind}{1,\ldots,n}
+%
+%
+%
+%
+%
+
+
+\title{RIGIDEZ AMBIENTAL E COMÉRCIO INTERNACIONAL: O QUE EVIDENCIAM OS DADOS?}
+
+\author{Pedro Milreu Cunha\thanks{Mestrando em economia aplicada no Programa de Pós-Graduação em Economia, Universidade Federal da Paraíba (UFPB). Email: <pedro.milreu@academico.ufpb.br>.} \and Rafael de Sousa Araújo\thanks{Doutorando em economia no Programa de Pós-Graduação em Economia, Universidade Federal de Pernambuco (UFPE). Email: <rafaelaraujo05@hotmail.com>.} \and Viviani Silva Lírio\thanks{Professora Titular do Departamento de Economia Rural da Universidade Federal de Viçosa (UFV). E-mail: <vslirio@ufv.br>.}}
+
+\date{}
+%
+%
+%
+%
+%
+%
+%
+%
+%
